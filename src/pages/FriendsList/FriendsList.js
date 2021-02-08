@@ -7,6 +7,7 @@ import {Pagination} from "../../library/common/components/Pagination/Pagination"
 import './friendsList.css';
 
 const FriendsList = () => {
+
     const [friendsList, updateFriendsList] = useState([]);
     const [filteredFriendsList, updateFilteredList] = useState([]);
     const [addFriendName, onChangeNewFriendName] = useState('');
