@@ -92,8 +92,8 @@ const FriendsList = () => {
                     <span>Friends List</span>
                     <span>
                         <span
+                            title="Sort by favourites."
                             onClick={toggleFavouriteFlag}
-                            title="Favourite"
                             className={`cta all-transition ${isSortedByFavourite ? 'favourite-cta' : ''}`}
                         >
                             <i className={`fa fa-star all-transition ${isSortedByFavourite ? 'favourite' : ''}`}/>
@@ -135,11 +135,11 @@ const FriendsList = () => {
                         </span>)
                 }
             </div>
-            <Pagination
+            {!!filteredFriendsList.length && <Pagination
                 currentPage={currentPage}
                 totalPages={Math.ceil(filteredFriendsList.length / 4) || 1}
                 onPageChange={onChangePage}
-            />
+            />}
         </div>
     );
 };
