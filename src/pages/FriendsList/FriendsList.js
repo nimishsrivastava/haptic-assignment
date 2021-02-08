@@ -98,7 +98,7 @@ const FriendsList = () => {
                         >
                             <i className={`fa fa-star all-transition ${isSortedByFavourite ? 'favourite' : ''}`}/>
                         </span>
-                        <i className={`fa ${isSortedByFavourite ? 'fa-caret-up' : 'fa-caret-down'}`}/>
+                        <i className={`fa sort-icon ${isSortedByFavourite ? 'fa-caret-up' : 'fa-caret-down'}`}/>
                     </span>
                 </div>
                 <TextInput
