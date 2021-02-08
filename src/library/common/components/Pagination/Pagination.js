@@ -3,7 +3,7 @@ import React from 'react';
 import './pagination.css';
 
 export const Pagination = props => {
-    const {currentPage, totalPages, onClickPageNumber, disablePageChange} = props;
+    const {currentPage, totalPages, onPageChange, disablePageChange} = props;
 
     const getPaginationNumbers = () => {
         if (totalPages > 0) {
@@ -25,14 +25,13 @@ export const Pagination = props => {
 
     const onChangePage = pageNumber => {
         if (!disablePageChange && pageNumber <= totalPages && pageNumber >= 1)
-            onClickPageNumber(pageNumber)
+            onPageChange(pageNumber)
     };
 
     return (
         <div className="pagination">
             <span
-                onClick={e => {
-                    e.preventDefault();
+                onClick={() => {
                     onChangePage(parseInt(currentPage) - 1);
                 }}
                 className={`change-page decrement ${currentPage === 1 ? 'disable' : ''}`}
@@ -44,8 +43,7 @@ export const Pagination = props => {
                 <>
                     <span
                         className="page-number"
-                        onClick={e => {
-                            e.preventDefault();
+                        onClick={() => {
                             onChangePage(1);
                         }}
                     >
@@ -59,8 +57,7 @@ export const Pagination = props => {
                 <span
                     key={pageNumber}
                     className={`page-number ${pageNumber === currentPage ? 'active' : ''}`}
-                    onClick={e => {
-                        e.preventDefault();
+                    onClick={() => {
                         onChangePage(pageNumber);
                     }}
                 >
@@ -73,8 +70,7 @@ export const Pagination = props => {
                     <span className="ellipses">...</span>
                     <span
                         className="page-number"
-                        onClick={e => {
-                            e.preventDefault();
+                        onClick={() => {
                             onChangePage(totalPages);
                         }}
                     >
@@ -84,8 +80,7 @@ export const Pagination = props => {
             )}
 
             <span
-                onClick={e => {
-                    e.preventDefault();
+                onClick={() => {
                     onChangePage(parseInt(currentPage) + 1);
                 }}
                 className={`change-page increment ${currentPage === totalPages ? 'disable' : ''}`}
@@ -99,7 +94,7 @@ export const Pagination = props => {
 Pagination.defaultProps = {
     currentPage: 1,
     totalPages: 0,
-    onClickPageNumber: () => {
+    onPageChange: () => {
     },
     disablePageChange: false
 };

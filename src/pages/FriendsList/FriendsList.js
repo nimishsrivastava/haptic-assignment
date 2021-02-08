@@ -48,7 +48,7 @@ const FriendsList = () => {
         }
     };
 
-    const deleteUser = (user) => {
+    const deleteFriend = (user) => {
         const list = [...friendsList];
         list.splice(list.findIndex(friend => friend.name === user.name), 1);
         updateFriendsList(list);
@@ -117,7 +117,7 @@ const FriendsList = () => {
                 {filteredFriendsList.slice((currentPage - 1) * 4, (currentPage - 1) * 4 + 4).map((user) => (
                     <UserTuple
                         key={user}
-                        deleteUser={() => deleteUser(user)}
+                        deleteUser={() => deleteFriend(user)}
                         toggleFavourite={() => toggleFavourite(user)}
                         user={user}
                     />
@@ -126,7 +126,7 @@ const FriendsList = () => {
             <Pagination
                 currentPage={currentPage}
                 totalPages={Math.ceil(filteredFriendsList.length / 4) || 1}
-                onClickPageNumber={onChangePage}
+                onPageChange={onChangePage}
             />
         </div>
     );
