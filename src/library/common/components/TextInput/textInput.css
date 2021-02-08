@@ -1,0 +1,38 @@
+input {
+    border: 0;
+    outline: 0;
+    padding: 9px 16px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    right: 16px;
+    top: 9px;
+    cursor: pointer;
+    color: #747474;
+}
+
+.error-message {
+    color: #FF5252;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 16px;
+    display: flex;
+    height: 21px;
+    align-items: center;
+    overflow: hidden;
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.hide-error {
+    height: 0;
+}

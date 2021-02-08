@@ -1,0 +1,71 @@
+.user-tuple {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    max-height: 72px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.delete-tuple {
+    max-height: 0;
+    opacity: 0;
+    border-bottom: 0;
+}
+
+.user-tuple:hover {
+    background-color: aliceblue;
+}
+
+.user-details, .cta-container {
+    display: flex;
+    padding: 12px 20px;
+}
+
+.user-details {
+    flex-direction: column;
+}
+
+.tag-line {
+    color: #747474;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.cta-container {
+    align-items: center;
+    color: #747474;
+}
+
+.cta {
+    border: 1px solid #747474;
+    border-radius: 3px;
+    padding: 3px 9px;
+    background-color: #fff;
+    margin-left: 9px;
+    cursor: pointer;
+}
+
+.favourite-cta {
+    background-color: #FF5252;
+}
+
+.all-transition {
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.favourite {
+    -moz-transform:rotate(72deg);
+    -webkit-transform:rotate(72deg);
+    transform:rotate(72deg);
+    color: #fff;
+}
+
+.delete-cta:hover {
+    color: #FF5252;
+    border: 1px solid #FF5252;
+}

@@ -1,0 +1,83 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 9px 0;
+}
+
+.page-number {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 5px;
+    cursor: pointer;
+
+    color: #747474;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.ellipses {
+    color: #747474;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.page-number:hover {
+    color: #4a90e2;
+}
+
+.active {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.active:hover {
+    color: #fff;
+}
+
+.change-page {
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    border: #4a90e2 1px solid;
+    object-fit: contain;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #4a90e2;
+}
+
+.disable:hover {
+    background-color: #fff;
+    border: #747474 1px solid;
+    color: #747474;
+}
+
+.change-page:hover {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.left-chevron {
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+.increment {
+    margin-left: 12px;
+}
+
+.decrement {
+    margin-right: 12px;
+}

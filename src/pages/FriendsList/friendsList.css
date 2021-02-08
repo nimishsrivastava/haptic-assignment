@@ -1,0 +1,14 @@
+.friends-list-container {
+  border: 1px solid #ddd;
+  width: 40vw;
+  min-width: 345px;
+  height: 445px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.friends-list-header {
+  background-color: #ddd;
+  padding: 12px 20px;
+}
