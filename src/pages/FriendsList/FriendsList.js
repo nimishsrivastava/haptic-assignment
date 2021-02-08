@@ -87,7 +87,7 @@ const FriendsList = () => {
 
     return (
         <div className="friends-list-container">
-            <div>
+            <div className="content">
                 <div className="friends-list-header">
                     <span>Friends List</span>
                     <span>
@@ -127,6 +127,13 @@ const FriendsList = () => {
                         user={user}
                     />
                 ))}
+                {
+                    !filteredFriendsList.length && (
+                        <span className="no-friends-text">
+                            <i className="fa fa-info-circle info-icon"/>
+                            No friends found!
+                        </span>)
+                }
             </div>
             <Pagination
                 currentPage={currentPage}
