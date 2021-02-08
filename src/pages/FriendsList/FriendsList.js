@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 
 import UserTuple from "./friendsListFrames/UserTuple/UserTuple";
 import TextInput from "../../library/common/components/TextInput/TextInput";
+import {Pagination} from "../../library/common/components/Pagination/Pagination";
 
 import './friendsList.css';
-import {Pagination} from "../../library/common/components/Pagination/Pagination";
 
 const FriendsList = () => {
     const [friendsList, updateFriendsList] = useState([]);
