@@ -22,18 +22,22 @@ const FriendsList = () => {
     }, [friendsList.length]);
 
     useEffect(() => {
-        if(isSortedByFavourite){
+        sortByFavourite()
+    }, [filteredFriendsList.length, isSortedByFavourite]);
+
+    const sortByFavourite = () => {
+        if (isSortedByFavourite) {
             const list = [...filteredFriendsList];
             const favourites = [];
             const nonFavourites = [];
-            list.forEach(friend=>{
+            list.forEach(friend => {
                 friend.isFavourite ? favourites.push(friend) : nonFavourites.push(friend)
             });
             updateFilteredList([...favourites, ...nonFavourites])
         } else {
-            searchFriend('');
+            searchFriend(searchText);
         }
-    }, [filteredFriendsList.length, isSortedByFavourite]);
+    };
 
     const addNewFriend = (e) => {
         if (e.key === 'Enter') {
@@ -67,7 +71,7 @@ const FriendsList = () => {
         updateCurrentPage(pageNumber);
     };
 
-    const toggleFavourite = (user) => {
+    const markAsFavourite = (user) => {
         const list = [...friendsList];
         list.forEach(friend => {
             if (friend.name === user.name)
@@ -76,7 +80,7 @@ const FriendsList = () => {
         updateFriendsList(list);
     };
 
-    const sortByFavourite = () => {
+    const toggleFavouriteFlag = () => {
         sortFavourite(prevFlag => !prevFlag)
     };
 
@@ -87,7 +91,7 @@ const FriendsList = () => {
                     <span>Friends List</span>
                     <span>
                         <span
-                            onClick={sortByFavourite}
+                            onClick={toggleFavouriteFlag}
                             title="Favourite"
                             className={`cta all-transition ${isSortedByFavourite ? 'favourite-cta' : ''}`}
                         >
@@ -118,7 +122,7 @@ const FriendsList = () => {
                     <UserTuple
                         key={user}
                         deleteUser={() => deleteFriend(user)}
-                        toggleFavourite={() => toggleFavourite(user)}
+                        toggleFavourite={() => markAsFavourite(user)}
                         user={user}
                     />
                 ))}
